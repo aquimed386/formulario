@@ -16,10 +16,14 @@ const signUp = e => {
       password2: pwd2,
       gen: genero,
       idioma: idiomas,
-
     };
 
-    localStorage[email] = JSON.stringify(userInfo);
+    // Convertir el array de objetos a una cadena de texto
+    var userInfoString = JSON.stringify(userInfo);
+    
+    // Guardar la cadena en el Local Storage
+    localStorage.setItem(email, userInfoString);
+
     // let formData = JSON.parse(localStorage.getItem('formData')) || [];
 
     // let exist = formData.length && 
@@ -29,16 +33,16 @@ const signUp = e => {
 
     
 
-    // if(!exist){
-    //     formData.push({ fname, lname, email, pwd, genero, idiomas });
-        
-    //     document.querySelector('form').reset();
-    //     document.getElementById('fname').focus();
-    //     alert("Cuenta creada.\n\nPor favor, vuelva atrás para loguearse.");
-    // }
-    // else{
-    //     alert("Ya hay una cuenta creada!");
-    // }
+     /* if(!exist){
+         formData.push({ fname, lname, email, pwd, genero, idiomas });
+    
+         document.querySelector('form').reset();
+         document.getElementById('fname').focus();
+         alert("Cuenta creada.\n\nPor favor, vuelva atrás para loguearse.");
+     }
+     else{
+         alert("Ya hay una cuenta creada!");
+     } */
     
 }
 
