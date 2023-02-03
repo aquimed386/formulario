@@ -12,8 +12,15 @@
 
 <body>
     <main>
+        <div id="cookie-banner">
+            <p>Este sitio web utiliza cookies para mejorar la experiencia de navegación. Al continuar navegando, acepta nuestras políticas de privacidad y uso de cookies.</p>
+            <input type="checkbox" id="accept-cookies" name="accept-cookies">
+            <label for="accept-cookies">Acepto las cookies</label>
+            <button id="accept-button">Aceptar</button>
+        </div>
+          
         <h2>Loguearse</h2>
-        <form role="form" onsubmit="signIn(event);" autocomplete="off">
+        <form role="form" onsubmit="signIn(event);" autocomplete="off" method="get">
             <div class="form-group">
                 <p>
                     <label for="email">Email</label>
@@ -39,7 +46,7 @@
             </script>
 
             <div class="form-group">
-                <button type="submit" id="botonEntrar" onmouseover="cambiarColorBoton('botonEntrar')"
+                <button type="submit" id="btnsumbit" onmouseover="cambiarColorBoton('botonEntrar')"
                     onmouseout="colorOriginal('botonEntrar')">Sign In</button>
             </div>
 

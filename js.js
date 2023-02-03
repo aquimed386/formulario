@@ -24,6 +24,8 @@ const signUp = e => {
     // Guardar la cadena en el Local Storage
     localStorage.setItem(email, userInfoString);
 
+    return location.href = "loguearse.html";
+
     // let formData = JSON.parse(localStorage.getItem('formData')) || [];
 
     // let exist = formData.length && 
@@ -48,15 +50,15 @@ const signUp = e => {
 
 function signIn(e) {
     e.preventDefault();
-    let email = document.getElementById('email').value, pwd = document.getElementById('password').value;
-    let formData = JSON.parse(localStorage.getItem('formData')) || [];
-    let exist = formData.length && 
-    JSON.parse(localStorage.getItem('formData')).some(data => data.email.toLowerCase() == email && data.pwd.toLowerCase() == pwd);
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let exist = localStorage.getItem(email) && JSON.parse(localStorage.getItem(email)).password == password;
+
     if(!exist){
         alert("Sus credenciales no son las adecuadas");
     }
     else{
-        location.href = "datos.html";
+        location.href = "datos.html?email=" + email;
     }
     
 }
@@ -96,9 +98,29 @@ function validarCorreo() {
     }
 
   }
+ 
 
+  //Funciones para las cookies
 
-  //Función para cambiar el color de los botones
+  window.onload = function() {
+    /* // si la cookie "accepted_cookies" existe, oculta la banner de cookies
+    if (document.cookie.indexOf("accepted_cookies=true") >= 0) {
+      document.getElementById("cookie-banner").style.display = "none";
+      // muestra el botón de submit con id "btnsumbit"
+      document.getElementById("btnsubmit").style.display = "inline";
+    } */
+
+    document.getElementById("accept-button").addEventListener("click", function() {
+      if (document.getElementById("accept-cookies").checked) {
+        // guarda una cookie de que el usuario aceptó las cookies
+        document.cookie = "accepted_cookies=true; max-age=31536000";
+        // oculta la banner de cookies
+        document.getElementById("cookie-banner").style.display = "none";
+        document.getElementById("btnsubmit").style.display = "inline";
+      }
+    });
+
+    //Función para cambiar el color de los botones
 
   function cambiarColorBoton (id){
 
@@ -114,4 +136,5 @@ function validarCorreo() {
 
   }
 
-  //Funciones para las cookies
+
+}

@@ -11,8 +11,15 @@
     
 
     <h2>Hola</h2>
-    <script>var nombre = localStorage.getItem("name");
+    <p>Tu nombre es: <span id="name"></span></p>
+    <p>Tu correo es: <span id="email"></span></p>
 
+    <script>
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        let email = url.searchParams.get("email");
+        document.getElementById("name").innerHTML = JSON.parse(localStorage.getItem(email)).name + ' ' + JSON.parse(localStorage.getItem(email)).surname;
+        document.getElementById("email").innerHTML = JSON.parse(localStorage.getItem(email)).email;
     </script>
     
 </body>
