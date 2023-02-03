@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <script type="text/javascript" src="js.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <h2>Loguearse</h2>
+        <form role="form" onsubmit="signIn(event);" autocomplete="off">
+            <div class="form-group">
+                <p>Email</p>
+                <input type="email" name="email" id="email" onblur="validarCorreo()">
+                <label id="validarEmail"></label>
+            </div>
+
+            <div class="form-group">
+                <p>Contraseña</p>
+                <input type="password" name="password" id="password" onblur="validarCampoNoVacio('password')">
+                <label id="validarPassword"></label>
+            </div>
+
+            <script>
+                /*Con esto evitaríamos que se pudiera pegar en el campo de la contraseña */
+                window.onload = () => {
+                    const myInput = document.getElementById('password');
+                    myInput.onpaste = e => e.preventDefault();
+                }
+            </script>
+
+            <div class="form-group">
+                <button type="submit" id="botonEntrar" onmouseover="cambiarColorBoton('botonEntrar')"
+                    onmouseout="colorOriginal('botonEntrar')">Sign In</button>
+            </div>
+
+        </form>
+        <p>¿No tienes cuenta? Registrate <a href="registrarse.html">aquí</a></p>
+
+    </main>
+
+</body>
+
+</html>

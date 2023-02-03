@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <script type="text/javascript" src="js.js"></script>
+    <style>
+        .scroll-box {
+          overflow-y: scroll;
+          width: 500px;
+          height: 200px;
+         
+        }
+            </style>
+    
+</head>
+<body>
+    <body>
+        <main>
+            <h2>Registro</h2>
+            <form role="form" onsubmit="signUp(event);" autocomplete="off">
+                <div class="form-group">
+                    <p>Nombre: </p>
+                    <input type="text" name="fname" id="fname">
+                    
+                </div>
+                <div class="form-group">
+                    <p>Apellidos: </p>
+                    <input type="text" name="lname" id="lname" placeholder="Last Name">
+                </div>
+
+                <div class="form-group">
+                    <p>Contraseña</p>
+                    <input type="password" name="pwd" id="pwd" placeholder="Password">
+                </div>
+
+                <div class="form-group">
+                    <p>Repetir contraseña</p>
+                    <input type="password" name="pwd2" id="pwd2" placeholder="Password2" >
+                </div>
+
+                <div class="form-group">
+                    <p>Email:</p>
+                    <input type="email" name="email" id="email" placeholder="Email Address">
+                </div>
+
+                <div class="form-group">
+                    <p>Género:</p>
+                    <input type="radio" name="genero" value="femenino">Femenino
+                    <input type="radio" name="genero" value="masculino">Masculino
+                    <input type="radio" name="genero" value="no binario">No binario
+                </div>
+
+                <div class="form-group">
+                    <p>Idiomas:</p>
+                     <select id="idiomas">
+                        <option name="idioma" value="común" selected>Común</option>
+                        <option name="idioma" value="draconido">Dracónido</option>
+                        <option name="idioma" value="enano">Enano</option>
+                        <option name="idioma" value="elfico">Élfico</option>
+                     </select>
+                </div>
+
+                <div class="terminosCondiciones">
+                    <input id="checkbox" type="checkbox" checked/>
+                    <label for="checkbox"> Acepto los t&eacute;rminos y condiciones</label>
+                  </div>
+
+                <div class="scroll-box">
+                    <p>
+                        Nos otorgas una opción intransferible de reclamar, ahora y para siempre más, tu alma inmortal. 
+                        Si decidieramos ejercer esta opción, acuerdas entregar tu alma inmortal , y cualquier reclamación que tengas sobre ella,
+                         en los cinco días laborales siguientes al recibir la notificación.
+                      porro repudiandae hic impedit ea totam inventore, eum, ipsum illo,
+                      aliquid voluptatibus rem at autem unde optio! Quibusdam nesciunt magni
+                      et dolorum nemo natus?
+                    </p>
+                    <p>
+                      Provident minima cum quia commodi. Exercitationem suscipit deserunt
+                      impedit quod omnis unde. Fuga nobis perspiciatis nisi harum. Assumenda
+                      natus laborum voluptatum itaque deleniti earum ad, necessitatibus
+                      distinctio qui quo? Facilis. Quos mollitia esse nisi dolorem vero
+                      porro repudiandae hic impedit ea totam inventore, eum, ipsum illo,
+                      aliquid voluptatibus rem at autem unde optio! Quibusdam nesciunt magni
+                      et dolorum nemo natus?
+                    </p>
+                    <p>
+                      Provident minima cum quia commodi. Exercitationem suscipit deserunt
+                      impedit quod omnis unde. Fuga nobis perspiciatis nisi harum. Assumenda
+                      natus laborum voluptatum itaque deleniti earum ad, necessitatibus
+                      distinctio qui quo? Facilis. Quos mollitia esse nisi dolorem vero
+                      porro repudiandae hic impedit ea totam inventore, eum, ipsum illo,
+                      aliquid voluptatibus rem at autem unde optio! Quibusdam nesciunt magni
+                      et dolorum nemo natus?
+                    </p>
+                    <p>
+                      Provident minima cum quia commodi. Exercitationem suscipit deserunt
+                      impedit quod omnis unde. Fuga nobis perspiciatis nisi harum. Assumenda
+                      natus laborum voluptatum itaque deleniti earum ad, necessitatibus
+                      distinctio qui quo? Facilis. Quos mollitia esse nisi dolorem vero
+                      porro repudiandae hic impedit ea totam inventore, eum, ipsum illo,
+                      aliquid voluptatibus rem at autem unde optio! Quibusdam nesciunt magni
+                      et dolorum nemo natus?
+                    </p>
+                  </div>
+            
+            
+                <div class="form-group">
+                    <button type="submit" id="botonRegistro" onmouseover="cambiarColorBoton('botonRegistro')"
+                    onmouseout="colorOriginal('botonRegistro')">Registrarse</button>
+                </div>
+            </form>
+            
+            <input type="button" id="atras" onclick="history.back()" name="volver atrás" value="volver atrás" onmouseover="cambiarColorBoton('atras')"
+            onmouseout="colorOriginal('atras')">
+        </main>
+
+   
+</body>
+</html>
