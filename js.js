@@ -1,3 +1,6 @@
+const VALIDARMAIL = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+const VALIDARPASSWORD = /^(?=.[A-Za-z])(?=.\d)[A-Za-z\d]{8,}$/;
+
 const signUp = e => {
   e.preventDefault();
     let fname = document.getElementById('fname').value,
@@ -18,13 +21,52 @@ const signUp = e => {
       idioma: idiomas,
     };
 
-    // Convertir el array de objetos a una cadena de texto
-    var userInfoString = JSON.stringify(userInfo);
+    let error = 0;
+
+    if (fname == "") {
+      document.getElementById("fname").style.borderColor = "#FF0000";
+      document.getElementById("fname-error").style.display = "inline";
+      error++;
+    }
+    if (lname == "") {
+      document.getElementById("lname").style.borderColor = "#FF0000";
+      document.getElementById("lname-error").style.display = "inline";
+      error++;
+    }
+    if (email == "" || !valMail(email)) {
+      document.getElementById("email").style.borderColor = "#FF0000";
+      document.getElementById("email-error").style.display = "inline";
+      error++;
+    }
+    if (pwd == "" || !valPassword(pwd)) {
+      document.getElementById("pwd").style.borderColor = "#FF0000";
+      document.getElementById("pwd-error").style.display = "inline";
+      error++;
+    }
+    if (pwd2 == "" || !valPassword(pwd2) || pwd2 != pwd) {
+      document.getElementById("pwd").style.borderColor = "#FF0000";
+      document.getElementById("pwd2").style.borderColor = "#FF0000";
+      document.getElementById("pwd2-error").style.display = "inline";
+      error++;
+    }
+    if (genero == "") {
+      document.getElementById("genero").style.borderColor = "#FF0000";
+      document.getElementById("genero-error").style.display = "inline";
+      error++;
+    }
+
+    if (error > 0) {
+      alert("Hay errores en el registro");
+    } else {
+      var userInfoString = JSON.stringify(userInfo);
     
     // Guardar la cadena en el Local Storage
     localStorage.setItem(email, userInfoString);
 
     return location.href = "loguearse.html";
+    }
+    // Convertir el array de objetos a una cadena de texto
+    
 
     // let formData = JSON.parse(localStorage.getItem('formData')) || [];
 
@@ -68,15 +110,29 @@ function validarCorreo() {
    
     let emailRecibido = document.getElementById("email").value;
   
-    let validarEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  
-    if (emailRecibido.match(validarEmail)) {
+    if (emailRecibido.match(VALIDARMAIL)) {
 
       document.getElementById("validarEmail").innerHTML = "";
     } else {
       document.getElementById("validarEmail").style.color = "#FF0000";
       document.getElementById("validarEmail").innerHTML =
         "Debe ingresar un correo v&aacutelido";
+    }
+  }
+
+  function valMail(correo) {
+    if (correo.match(VALIDARMAIL)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function valPassword(password) {
+    if (password.match(VALIDARPASSWORD)) {
+      return true;
+    } else {
+      return false;
     }
   }
 

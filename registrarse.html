@@ -30,28 +30,39 @@
             <h2>Registro</h2>
             <form role="form" onsubmit="signUp(event);" autocomplete="off">
                 <div class="form-group">
-                    <p>Nombre: </p>
+                    <p>
+                        <label for="fname">Nombre:</label>
+                    </p>
                     <input type="text" name="fname" id="fname">
-                    
+                    <span id="fname-error" style="display: none; color: red; margin-left: 1rem;">El campo no tiene que estar vacío</span>
                 </div>
                 <div class="form-group">
-                    <p>Apellidos: </p>
-                    <input type="text" name="lname" id="lname" placeholder="Last Name">
+                    <p> 
+                        <label for="lname">Apellidos:</label>
+                    </p>
+                    <input type="text" name="lname" id="lname" placeholder="Last Name"> 
+                    <span id="lname-error" style="display: none; color: red; margin-left: 1rem;">El campo no tiene que estar vacío</span>
                 </div>
 
                 <div class="form-group">
-                    <p>Contraseña</p>
+                    <p> 
+                        <label for="pwd">Contraseña</label>
+                    </p>
                     <input type="password" name="pwd" id="pwd" placeholder="Password">
+                    <span id="pwd-error" style="display: none; color: red; margin-left: 1rem;">Debes poner una contraseña correcta</span>
                 </div>
 
                 <div class="form-group">
+                    <!-- Poner el label como el ejemplo de arriba -->
                     <p>Repetir contraseña</p>
                     <input type="password" name="pwd2" id="pwd2" placeholder="Password2" >
+                    <span id="pwd2-error" style="display: none; color: red; margin-left: 1rem;">La contraseña debe coincidir con la anterior</span>
                 </div>
 
                 <div class="form-group">
                     <p>Email:</p>
                     <input type="email" name="email" id="email" placeholder="Email Address">
+                    <span id="email-error" style="display: none; color: red; margin-left: 1rem;">Debes poner un correo válido</span>
                 </div>
 
                 <div class="form-group">
@@ -59,6 +70,7 @@
                     <input type="radio" name="genero" value="femenino">Femenino
                     <input type="radio" name="genero" value="masculino">Masculino
                     <input type="radio" name="genero" value="no binario">No binario
+                    <span id="genero-error" style="display: none; color: red; margin-left: 1rem;">Debes seleccionar un género</span>
                 </div>
 
                 <div class="form-group">
